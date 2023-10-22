@@ -6,7 +6,7 @@ var runFrame = setInterval(frame, 100); // Remove the parentheses here
 // clearInterval(intervalId);
 var cutFrame = 0
 function frame() {
-    if (cutFrame < 100) {
+    if (cutFrame <= 100) {
         randomCharacter()
         cutFrame++
     } else  {
