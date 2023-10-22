@@ -1,42 +1,34 @@
-var dynamicLogo = document.getElementById(`heading`);
-var websiteName = "dynamic";
-var glitchyCharacters = ["$", "@", "&", "!", "%", "#", "?", "Δ", "Θ", "Λ", "Ξ", "Π", "Σ", "Φ", "Ψ", "Ω", "+", "/", "=", "<", ">", "≠", "≤", "≥", "∞", "∑", "∫", "∆"];
-//var runFrame = setInterval(frame, 1000); // Remove the parentheses here
+//var dynamicLogo = document.getElementById(`webName`);
+//document.getElementById(`startOfheading`).innerText = "</"
+//document.getElementById(`endOfheading`).innerText = ">"
+//var websiteName = "dynamic";
+//var runFrame = setInterval(frame, 100); // Remove the parentheses here
 
-var cutFrame = 0
-function frame() {
-    if (cutFrame < 20) {
-        changeCharacter()
-        cutFrame++
-    } else  {
-        clearInterval(runFrame);
-        dynamicLogo.innerText = websiteName
+const letters = `ABCDEFGHIJKLMNOPQRWSTUVWXYZ%%#@&$∞$@&!%#?”˜›£¦¨©+/=‰‰¤‰¥‘«`;
+
+let interval = null;
+
+document.querySelector("h1").onmouseover = event => {  
+  let iteration = -2;
+  
+  clearInterval(interval);
+  
+  interval = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if(index < iteration) {
+          return event.target.dataset.value[index];
+        }
+      
+        return letters[Math.floor(Math.random() * letters.length)]
+      })
+      .join("");
+    
+    if(iteration >= event.target.dataset.value.length){ 
+      clearInterval(interval);
     }
-}
-
-function randomCharacter() {
-    var randomIndex = Math.floor(Math.random() * glitchyCharacters.length);
-    var character = glitchyCharacters[randomIndex];
-    return character
-}
-
-function changeCharacter() {
-  var newHeadingText = [];
-  console.log(websiteName.length)
-  for (let i = 0; i < websiteName.length; i++) {
-    const ele = randomCharacter()
-    newHeadingText.push(ele)
-    console.log(ele)
-  }
-  console.log(newHeadingText)
-  var finalText = "";
-  for (let i = 0; i < newHeadingText.length; i++) {
-    const element = newHeadingText[i];
-    finalText = finalText + element
-  }
-  renderHeading(finalText);
-}
-
-function renderHeading(headingText) {
-  dynamicLogo.innerText = headingText;
+    
+    iteration += 1 / 4;
+  }, 30);
 }

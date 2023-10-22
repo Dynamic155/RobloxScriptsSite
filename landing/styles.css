@@ -3,10 +3,19 @@ body {
     margin: 0px;
     flex-direction: column;
     align-items: center;
+    background: hsl(235, 19%, 13%);
+    color: #fff;
+    font-family: 'Ubuntu';
 }
 
-#heading {
-    font-family: 'Ubuntu';
-    font-weight: 900;
-    font-size: 100px;
+#logo {
+    display: flex;
+}
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
 }
