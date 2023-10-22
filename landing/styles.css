@@ -3,7 +3,7 @@ body {
     margin: 0px;
     flex-direction: column;
     align-items: center;
-    background: hsl(235, 19%, 13%);
+    background: #1b1c27;
     color: #fff;
     font-family: 'Ubuntu';
 }
@@ -18,4 +18,17 @@ h1 {
     color: white;
     padding: 0rem clamp(1rem, 2vw, 3rem);
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    margin: 0px;
+}
+
+#line {
+    position: relative;
+    border-radius: 3px;
+    height: 3px;
+    background: white;
+    border: none;
+}
+
+#luaU {
+    opacity: 0%;
 }
