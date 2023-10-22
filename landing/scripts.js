@@ -4,6 +4,7 @@
 //var websiteName = "dynamic";
 //var runFrame = setInterval(frame, 100); // Remove the parentheses here
 var line = document.querySelector(`#liner`)
+const luaUtext = document.querySelector(`#lua`)
 const letters = `ABCDEFGHIJKLMNOPQRWSTUVWXYZ%%#@&$∞$@&!%#?”˜›£¦¨©+/=‰‰¤‰¥‘«`;
 
 let interval = null;
@@ -32,30 +33,35 @@ window.addEventListener("load", () => {
             var frame = 0
             var width = 0
             runFrame = setInterval(() => {
-                
+
                 frame++
-                width = width + 2
-                line.innerHTML = `<hr id="line" style="translate: ${-302 + width/2}px -42px; width: ${width}px;">`
-                if (frame > 300){
+                width = width + 6
+                line.innerHTML = `<hr id="line" style="translate: ${-302 + width/2}px -40px; width: ${width}px;">`
+                if (frame > 400/4){
                     clearInterval(runFrame)
 
                     setTimeout(() => {
+                        var height = 0
                         var frame = 0
-                        runFrame = setInterval(() => {
+                        var opacity = 0
+                        otherAnimation = setInterval(() => {
                             frame++
+                            opacity = opacity + 2
+                            height = height + 0.13
+                            luaUtext.innerHTML = `<h3 id="luaU" style="opacity: ${opacity - 170}%; translate: 47px ${-75 + height + 5}px;">LuaU Scripting</h3>`
 
-                            if (frame > 300){
-                                clearInterval(runFrame)
+                            if (frame > 150){
+                                clearInterval(otherAnimation)
                             }
-                        }, 5);
-                      }, 250);
+                        }, 1);
+                      }, 100);
                 }
-            }, 5);
+            }, 2.5);
           }, 250);
         }
   
         iteration += 1/8; // Use 0.25 to increment by 1/4
-      }, 20);
+      }, 16);
       
     }
   });
