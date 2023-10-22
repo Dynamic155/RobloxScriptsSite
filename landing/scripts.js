@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
 
                 frame++
                 width = width + 6
-                line.innerHTML = `<hr id="line" style="translate: ${-302 + width/2}px -40px; width: ${width}px;">`
+                line.innerHTML = `<hr id="line" style="translate: ${-302 + width/2}px -39px; width: ${width}px;">`
                 if (frame > 400/4){
                     clearInterval(runFrame)
 
@@ -48,7 +48,7 @@ window.addEventListener("load", () => {
                             frame++
                             opacity = opacity + 2
                             height = height + 0.13
-                            luaUtext.innerHTML = `<h3 id="luaU" style="opacity: ${opacity - 170}%; translate: 47px ${-75 + height + 5}px;">LuaU Scripting</h3>`
+                            luaUtext.innerHTML = `<h3 id="luaU" style="opacity: ${opacity - 170}%; translate: 45px ${-84 + height}px;">LuaU Scripting</h3>`
 
                             if (frame > 150){
                                 clearInterval(otherAnimation)
