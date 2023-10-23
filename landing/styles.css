@@ -12,15 +12,6 @@ body {
     display: flex;
 }
 
-h1 {
-    font-family: 'Space Mono', monospace;
-    font-size: clamp(3rem, 10vw, 10rem);
-    color: white;
-    padding: 0rem clamp(1rem, 2vw, 3rem);
-    border-radius: clamp(0.4rem, 0.75vw, 1rem);
-    margin: 0px;
-}
-
 #line {
     position: relative;
     border-radius: 3px;
@@ -31,6 +22,17 @@ h1 {
 
 #luaU {
     position: relative;
+}
+
+#heading {
+    position: relative;
+    padding: 0px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    translate: -5px -13px;
+    font-size: 138px;
+    margin: 0px;
 }
 
 #title {
