@@ -36,6 +36,8 @@ h1 {
 #title {
     position: absolute;
     translate: 0px 400px;
+    min-width: 681px;
+    min-height: 290px;
 }
 
 #lua {
