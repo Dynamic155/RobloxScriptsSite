@@ -6,8 +6,31 @@
 var line = document.querySelector(`#liner`)
 const luaUtext = document.querySelector(`#lua`)
 const letters = `ABCDEFGHIJKLMNOPQRWSTUVWXYZ%%#@&$∞$@&!%#?”˜›£¦¨©+/=‰‰¤‰¥‘«`;
+const audioFolder = "../AudioFX";
+const cpuSound = "badCPU.mp3";
+const welcomeSound = "welcomeMSG.wav";
+const fadeDuration = 7000;
+
+const badCPUaudio = new Audio(`${audioFolder}/${cpuSound}`);
+const welcomeMessage = new Audio(`${audioFolder}/${welcomeSound}`);
+badCPUaudio.volume = 0.6;
 
 let interval = null;
+
+function fadeAudioPause() {
+  const fadeStep = badCPUaudio.volume / (fadeDuration / 1); 
+  const fadeInterval = setInterval(() => {
+    if (badCPUaudio.volume - fadeStep > 0) {
+      badCPUaudio.volume -= fadeStep; 
+    } else {
+      badCPUaudio.volume = 0; 
+      clearInterval(fadeInterval);
+      badCPUaudio.pause(); 
+    }
+  }, 10);
+}
+
+badCPUaudio.play()
 
 window.addEventListener("load", () => {
     const heading = document.querySelector("#heading");
@@ -26,6 +49,7 @@ window.addEventListener("load", () => {
             return letters[Math.floor(Math.random() * letters.length)];
           })
           .join("");
+          fadeAudioPause()
   
         if (iteration >= originalText.length) {
           clearInterval(interval);
@@ -49,6 +73,7 @@ window.addEventListener("load", () => {
                             opacity = opacity + 2
                             height = height + 0.13
                             luaUtext.innerHTML = `<h3 id="luaU" style="opacity: ${opacity - 170}%; translate: 45px ${-84 + height}px;">LuaU Scripting</h3>`
+                            welcomeMessage.play()
 
                             if (frame > 150){
                                 clearInterval(otherAnimation)
