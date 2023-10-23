@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="title">
-            <div>
-                <h1 data-value="DYNAMIC" id="heading">DYNAMIC</h1>
-                <div id="liner">
-                    <hr id="line" style="translate: 40px -150px; width: 0px;">
-                </div>
-            </div>
-            <div id="lua">
-                <h3 id="luaU" style="opacity: 0%; translate: 275px -90px;">LuaU Scripting</h3>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/effcc6a2af.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cards.css">
+</head>
+<body>
+    <div id="title">
+        <div>
+            <h1 data-value="DYNAMIC" id="heading" class="unselectable">DYNAMIC</h1>
+            <div id="liner">
+                <hr id="line" style="translate: 40px -150px; width: 0px;">
             </div>
         </div>
-        <script src="scripts.js"></script>
-    </body>
+        <div id="lua">
+            <h3 id="luaU" style="opacity: 0%; translate: 275px -90px;">LuaU Scripting</h3>
+        </div>
+    </div>
+
+    <div id="cards">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-image">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <div class="card-info-wrapper">
+                    <div class="card-info">
+                        <i class="fa-solid fa-box-open"></i>
+                    <div class="card-info-title">
+                        <h3>Open Source</h3>  
+                        <h4>All of our scripts are open source unless clearly stated otherwise.</h4>
+                    </div>    
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-image">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="card-info-wrapper">
+                    <div class="card-info">
+                        <i class="fa-solid fa-eye"></i>
+                    <div class="card-info-title">
+                        <h3>Moderated</h3>  
+                        <h4>Each script is moderated before uploaded onto the site.</h4>
+                    </div>    
+                    </div>  
+                </div>
+                </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-image">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <div class="card-info-wrapper">
+                    <div class="card-info">
+                        <i class="fa-solid fa-handshake"></i>
+                    <div class="card-info-title">
+                        <h3>Trusted</h3>  
+                        <h4>All scripts on the site is trusted, and has been checked using AI.</h4>
+                    </div>    
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="cardResp.js"></script>
+</body>
 </html>
