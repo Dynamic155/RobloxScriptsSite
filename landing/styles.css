@@ -56,5 +56,16 @@ body {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-  }
+}
+
+#content {
+    width: 99%;
+    margin: 10px;
+    height: 3000px;
+    border: 2px #7aa2f76c solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
   
