@@ -72,7 +72,7 @@ window.addEventListener("load", () => {
                             frame++
                             opacity = opacity + 2
                             height = height + 0.13
-                            luaUtext.innerHTML = `<h3 id="luaU" style="opacity: ${opacity - 170}%; translate: 45px ${-84 + height}px;">LuaU Scripting</h3>`
+                            luaUtext.innerHTML = `<h3 id="luaU" style="opacity: ${opacity - 170}%; translate: 50px ${-84 + height}px;">LuaU Scripting</h3>`
                             welcomeMessage.play()
                             if (frame > 150){
                                 clearInterval(otherAnimation)
